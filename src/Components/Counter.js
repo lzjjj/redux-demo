@@ -3,34 +3,26 @@ class Counter extends Component {
     constructor(props) {
         super(props);
         this.inputValue = React.createRef();
-      }
-      increment=()=>{
-      console.log(this.props.index)
-
-        this.props.propsObj.onIncrement(this.props.index);
-      }
-      decrement=()=>{
-        this.props.propsObj.onDecrement(this.props.index);
-      }
-      onDecrement
-      multiplied=()=>{
+    }
+    multiplied = () => {
         const multipler = this.inputValue.current.value;
-        this.props.propsObj.onMultiplied(this.props.index,multipler);
-      }
-      Divided=()=>{
+        this.props.onMultiplied(this.props.index, multipler);
+    }
+    Divided = () => {
         const divider = this.inputValue.current.value;
-        this.props.propsObj.onDivided(this.props.index,divider);
-      }
+        this.props.onDivided(this.props.index, divider);
+    }
     render() {
-        const { state} = this.props.propsObj;
+        console.log(this.props.value)
+        const { value,onIncrement,onDecrement, index } = this.props;
         return (
             <div >
-                Clicked: {state[this.props.index]} times
+                Clicked: {value} times
         {' '}
-                <button onClick={this.increment}>
+                <button onClick={()=>onIncrement(index)}>
                     +
           </button>
-                <button onClick={this.decrement}>
+                <button onClick={()=>onDecrement(index)}>
                     -
           </button>
                 <button onClick={this.multiplied}>

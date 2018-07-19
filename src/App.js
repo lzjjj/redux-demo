@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <CounterGroup propsObj={this.props} amount={3}/>
+      <CounterGroup  amount={3}/>
       </div>
     );
   }

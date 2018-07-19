@@ -1,27 +1,28 @@
+import * as types from '../Constants/ActionTypes'
 export default (state = [0, 0, 0], action) => {
     switch (action.type) {
-        case 'INCREMENT':
+        case types.INCREMENT:
             {
                 const newState = [...state];
                 newState[action.index]++;
                 return newState;
             }
 
-        case 'DECREMENT':
+        case types.DECREMENT:
             {
                 const newState = [...state];
                 newState[action.index]--;
                 return newState;
             }
 
-        case 'MULTIPLIED':
+        case types.MULTIPLE:
             {
                 const newState = [...state];
                 newState[action.index] *= action.multipler;
                 return newState;
             }
 
-        case 'DIVIDED':
+        case types.DIVIDED:
             {
                 const newState = [...state];
                 newState[action.index] /= action.multipler;
