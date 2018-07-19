@@ -19,7 +19,11 @@ class Counter extends Component {
             <div >
                 Clicked: {value} times
         {' '}
-                <button onClick={()=>onIncrement(index)}>
+                <button onClick={
+                    ()=>setTimeout(() => {
+                        onIncrement(index)
+                    }, 1000)
+                    }>
                     +
           </button>
                 <button onClick={()=>onDecrement(index)}>
